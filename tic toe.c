@@ -4,7 +4,7 @@
 # define rows 5
 # define colm 11
 
-
+//FUNCTION TO CREATE MATRIX
 void create_matrix(char arr[rows][colm] )
 {
 
@@ -25,9 +25,9 @@ void create_matrix(char arr[rows][colm] )
                 arr[i][j]=' ';
         }
     }
-    //return arr;
-    //print_matrix(arr);
+
 }
+//FUNCTION TO PRINT MATRIX
    void print_matrix(char arr[rows][colm])
    {
       system("cls");
@@ -42,6 +42,7 @@ void create_matrix(char arr[rows][colm] )
            printf("\n");
        }
    }
+   //FUNCTION TO MARK THE MOVE
    void fill_option(char arr[rows][colm],int a,int num)
    {
        if(a==1)
@@ -90,6 +91,7 @@ void create_matrix(char arr[rows][colm] )
 
        }
    }
+   //FUNCTION TO CHECK WINNER
        int check(char arr[rows][colm])
       {
        if(arr[0][1]=='0' && arr[2][1]=='0')
@@ -127,6 +129,16 @@ void create_matrix(char arr[rows][colm] )
            if(arr[4][9 ]=='0')
            return 1;
 
+       }
+       if(arr[0][1]=='0' && arr[2][5]=='0')
+       {
+           if(arr[4][9]=='0')
+            return 1;
+       }
+        if(arr[0][9]=='0' && arr[2][5]=='0')
+       {
+           if(arr[4][1]=='0')
+            return 1;
        }
 
 
@@ -168,6 +180,18 @@ void create_matrix(char arr[rows][colm] )
            if(arr[4][9 ]=='X')
            return 2;
        }
+        if(arr[0][1]=='X' && arr[2][5]=='X')
+       {
+           if(arr[4][9]=='X')
+            return 2;
+       }
+        if(arr[0][9]=='X' && arr[2][5]=='X')
+       {
+           if(arr[4][1]=='0')
+            return 2;
+       }
+
+
  }
 
 
@@ -175,19 +199,17 @@ int main()
 {
      int num1,num2;
     char choice;
-     int b;
-       char arr[rows][colm];
+    int b;
+    char arr[rows][colm];
     start:
-
-
     create_matrix(arr);
     char name1[20];
     char name2[20];
     printf("Enter name of Player 1 : ");
     scanf("%s",name1);
-     printf("Enter name of Player 2: ");
+    printf("Enter name of Player 2: ");
     scanf("%s",name2);
-     print_matrix(arr);
+    print_matrix(arr);
 
     while(1)
     {
@@ -201,7 +223,7 @@ int main()
         {
             printf("Player 1 wins\n");
             printf("Do u want to continue(y/n) : ");
-            scanf("%c",choice);
+            scanf(" %c",&choice);
             if(choice=='y')
             {
                 system("cls");
@@ -211,8 +233,6 @@ int main()
                 {
                     printf("game over");
                     break;
-
-
                 }
 
 
@@ -221,7 +241,7 @@ int main()
         {
             printf("Player 2 wins\n");
             printf("Do u want to continue(y/n) : ");
-            scanf("%c",choice);
+            scanf(" %c",&choice);
             if(choice=='y')
             {
                  system("cls");
@@ -243,7 +263,7 @@ int main()
         {
             printf("Player 1 wins\n");
             printf("Do u want to continue(y/n) : ");
-            scanf("%c",choice);
+            scanf(" %c",&choice);
             if(choice=='y')
                  {
                      system("cls");
@@ -259,7 +279,7 @@ int main()
         {
             printf("Player 2 wins\n");
             printf("Do u want to continue(y/n) : ");
-            scanf("%c",choice);
+            scanf(" %c",&choice);
             if(choice=='y')
             {
                  system("cls");
@@ -271,7 +291,7 @@ int main()
                     break;
         }
 
-
     }
+
 
 }
